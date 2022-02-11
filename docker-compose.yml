@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  sampleauthentication.net:
+    image: ${DOCKER_REGISTRY-}sampleauthenticationnet
+    build:
+      context: .
+      dockerfile: src/SampleAuthentication.Net/Dockerfile
+  
+  database:
+    image: ${DOCKER_REGISTRY-}database
+    build:
+      context: .
+      dockerfile: db/Dockerfile
